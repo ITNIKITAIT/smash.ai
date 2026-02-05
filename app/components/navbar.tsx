@@ -23,17 +23,12 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-8">
           <Link
-            href="#economics"
+            href="/economics"
             className="text-sm font-medium hover:text-primary transition-colors">
             Economics
           </Link>
           <Link
-            href="#royalties"
-            className="text-sm font-medium hover:text-primary transition-colors">
-            Royalties
-          </Link>
-          <Link
-            href="#token"
+            href="/token-sale"
             className="text-sm font-medium hover:text-primary transition-colors">
             Token Sale
           </Link>
@@ -42,12 +37,11 @@ export function Navbar() {
             className="text-sm font-medium hover:text-primary transition-colors">
             About
           </Link>
-        </div>
-
-        <div className="hidden md:flex items-center gap-4">
-          <Button variant="glow" size="sm" asChild>
-            <Link href="mailto:hello@sms.ai">Invest Now</Link>
-          </Button>
+          <div className="hidden md:flex items-center gap-4">
+            <Button variant="glow" size="sm" asChild>
+              <Link href="mailto:hello@sms.ai">Invest Now</Link>
+            </Button>
+          </div>
         </div>
 
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -64,19 +58,13 @@ export function Navbar() {
             className="md:hidden border-b border-white/10 bg-background">
             <div className="container px-4 py-4 flex flex-col gap-4">
               <Link
-                href="#economics"
+                href="/economics"
                 className="text-sm font-medium py-2"
                 onClick={() => setIsOpen(false)}>
                 Economics
               </Link>
               <Link
-                href="#royalties"
-                className="text-sm font-medium py-2"
-                onClick={() => setIsOpen(false)}>
-                Royalties
-              </Link>
-              <Link
-                href="#token"
+                href="/token-sale"
                 className="text-sm font-medium py-2"
                 onClick={() => setIsOpen(false)}>
                 Token Sale

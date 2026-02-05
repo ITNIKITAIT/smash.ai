@@ -26,21 +26,28 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#economics"
+                  href="/"
+                  className="text-muted-foreground hover:text-primary transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-muted-foreground hover:text-primary transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/economics"
                   className="text-muted-foreground hover:text-primary transition-colors">
                   Economics
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#royalties"
-                  className="text-muted-foreground hover:text-primary transition-colors">
-                  Fan Royalties
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#token"
+                  href="/token-sale"
                   className="text-muted-foreground hover:text-primary transition-colors">
                   Token Sale
                 </Link>
@@ -63,20 +70,6 @@ export function Footer() {
                   href="#"
                   className="text-muted-foreground hover:text-primary transition-colors">
                   Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors">
-                  Token Economics
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors">
-                  Contact
                 </Link>
               </li>
             </ul>
