@@ -1,20 +1,15 @@
 import Link from 'next/link';
 import { Music, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Logo } from './ui/logo';
+import { Container } from './ui/container';
 
 export function Footer() {
   return (
     <footer className="bg-background border-t border-border py-12">
-      <div className="container px-4 mx-auto">
+      <Container>
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <Link
-              href="/"
-              className="flex items-center gap-2 font-bold text-xl tracking-tighter mb-4">
-              <div className="bg-primary/20 p-1.5 rounded-lg">
-                <Music className="w-5 h-5 text-primary" />
-              </div>
-              SMASH<span className="text-primary">.</span>AI
-            </Link>
+            <Logo className="mb-4" />
             <p className="text-muted-foreground max-w-sm">
               The first blockchain-powered streaming platform that pays you to
               listen. Building the fair future of music.
@@ -98,7 +93,7 @@ export function Footer() {
             </Link>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

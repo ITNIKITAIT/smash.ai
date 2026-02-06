@@ -1,90 +1,68 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { Button } from '../ui/button';
+import { Container } from '../ui/container';
 import { Input } from '../ui/input';
+import { Button } from '../ui/button';
 import { Checkbox } from '../ui/checkbox';
-import { Mail, ArrowRight } from 'lucide-react';
 
 export function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 bg-background relative overflow-hidden border-t border-border">
-      <div className="container px-4 mx-auto max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 bg-card/30 backdrop-blur-xl border border-border rounded-3xl overflow-hidden">
-          {/* Email Alerts Section */}
-          <div className="p-8 md:p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-border relative group">
-            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative z-10">
-              <h3 className="text-2xl md:text-3xl font-bold mb-8">
-                Email Alerts
-              </h3>
-
-              <div className="space-y-6">
-                <div className="space-y-2">
-                  <Input
-                    placeholder="Email Address"
-                    className="bg-background/50 border-input focus-visible:ring-primary h-12"
-                  />
-                </div>
-
-                <div className="flex flex-wrap gap-6">
-                  {['News', 'Token Sale Updates', 'Events'].map((item) => (
-                    <div key={item} className="flex items-center space-x-2">
-                      <Checkbox id={item} />
-                      <label
-                        htmlFor={item}
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer text-muted-foreground hover:text-foreground transition-colors">
-                        {item}
-                      </label>
-                    </div>
-                  ))}
-                </div>
-
-                <Button
-                  className="w-full md:w-auto min-w-[140px]"
-                  variant="secondary">
-                  SUBMIT
-                </Button>
+      className="pt-20 bg-background relative overflow-hidden">
+      <Container className="max-w-[1500px]">
+        <div className="grid grid-cols-12 items-end">
+          <div className="col-span-2" />
+          <div className="col-span-6 p-30 border-2 border-b-0 rounded-t-lg border-primary h-fit">
+            <h2 className="text-3xl font-bold text-foreground mb-8">
+              Email Alerts
+            </h2>
+            <form className="space-y-6">
+              <Input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                className="max-w-md rounded-lg border-2 h-12 text-base"
+              />
+              <div className="flex flex-wrap gap-6 text-sm">
+                {['News', 'Token Updates', 'Events'].map((label) => (
+                  <label
+                    key={label}
+                    className="flex items-center gap-2 cursor-pointer text-foreground">
+                    <Checkbox name="alerts" value={label} />
+                    <span className="uppercase tracking-wide">{label}</span>
+                  </label>
+                ))}
               </div>
-            </motion.div>
+              <Button
+                variant="glow"
+                size="xl"
+                className="rounded-lg font-semibold uppercase">
+                Submit
+              </Button>
+            </form>
           </div>
-
-          {/* Investor Contact Section */}
-          <div className="p-8 md:p-12 lg:p-16 relative bg-secondary/5 group">
-            <div className="absolute inset-0 bg-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="relative z-10 h-full flex flex-col justify-center">
-              <h3 className="text-2xl md:text-3xl font-bold mb-6">
-                Investor Contact
-              </h3>
-              <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
-                Questions for the Investor Relations department can be emailed
-                to hello@sms.ai or submitted by clicking on the button below.
-              </p>
-
-              <div>
-                <Button size="xl" variant="glow" asChild>
-                  <a href="mailto:hello@sms.ai">
-                    CONTACT US <Mail className="ml-2 w-4 h-4" />
-                  </a>
-                </Button>
-              </div>
-            </motion.div>
+          <div className="col-span-4 p-20 border-2 border-b-0 border-l-0 rounded-tr-lg border-primary h-fit">
+            <h2 className="text-3xl font-bold text-foreground mb-6">
+              Investor Contact
+            </h2>
+            <p className="text-muted-foreground text-base leading-relaxed mb-8">
+              Questions for the Investor Relations department can be emailed to{' '}
+              <a
+                href="mailto:hello@sms.ai"
+                className="text-primary hover:underline font-medium">
+                hello@sms.ai
+              </a>{' '}
+              or submitted by clicking on the button below.
+            </p>
+            <Button
+              asChild
+              size="xl"
+              variant="outline"
+              className="rounded-lg font-semibold uppercase">
+              <a href="mailto:hello@sms.ai">Contact us</a>
+            </Button>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

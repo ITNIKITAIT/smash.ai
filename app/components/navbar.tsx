@@ -6,13 +6,14 @@ import { Menu } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from './ui/logo';
+import { Container } from './ui/container';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+      <Container className="h-16 flex items-center justify-between">
         <Logo />
 
         <div className="hidden md:flex items-center gap-8">
@@ -41,7 +42,7 @@ export function Navbar() {
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           <Menu className="w-6 h-6" />
         </button>
-      </div>
+      </Container>
 
       <AnimatePresence>
         {isOpen && (

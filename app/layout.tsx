@@ -37,7 +37,7 @@ export default function RootLayout({
           syne.variable,
           spaceMono.variable,
         )}>
-        <main className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/20 selection:text-primary">
+        <main className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary">
           <Navbar />
           {children}
           <Footer />

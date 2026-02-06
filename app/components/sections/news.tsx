@@ -1,111 +1,140 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  ArrowRight,
-  Calendar,
-  FileText,
-  Megaphone,
-  TrendingUp,
-} from 'lucide-react';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '../ui/card';
-import { Button } from '../ui/button';
+import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { Container } from '../ui/container';
 
-const newsItems = [
+const ARTICLES = [
   {
-    category: 'Token Sale',
-    title: '$5M Token Sale Now Open',
-    date: 'Feb 1, 2026',
-    description:
-      'Round closes Feb 15, 2026. Minimum investment $100K. 15-20% token supply available.',
-    icon: TrendingUp,
-    color: 'text-accent',
+    category: 'FOR THE RECORD',
+    title: 'SMASH Unveils Groundbreaking Blockchain-Powered Fan Royalties',
+    date: 'FEBRUARY 6, 2026',
+    dateTime: '2026-02-06',
+    imageSrc: '/images/1.png',
   },
   {
-    category: 'Press Release',
-    title: 'SMASH AI Unveils "Pay-to-Listen" Model',
-    date: 'Jan 28, 2026',
-    description:
-      'Revolutionary blockchain platform announces 3% fan royalties and 2% referral commissions.',
-    icon: Megaphone,
-    color: 'text-primary',
+    category: 'ARTIST SPOTLIGHT',
+    title: 'Artists See 3000% Payout Increase with SMASH AI Streaming Platform',
+    date: 'FEBRUARY 6, 2026',
+    dateTime: '2026-02-06',
+    imageSrc: '/images/2.png',
   },
   {
-    category: 'Milestone',
-    title: 'Licensing & Compliance Update',
-    date: 'Jan 15, 2026',
-    description:
-      'Pursuing major agreements with labels and performing rights organizations for Q2 launch.',
-    icon: FileText,
-    color: 'text-secondary',
+    category: 'INVESTOR UPDATES',
+    title:
+      'Exclusive Token Sale Round Nears Close: Invest in the Future of Music',
+    date: 'FEBRUARY 6, 2026',
+    dateTime: '2026-02-06',
+    imageSrc: '/images/3.png',
+  },
+  {
+    category: 'TOKENOMICS',
+    title:
+      'The Economics of Empowerment: How SMASH Pays Listeners and Creators',
+    date: 'FEBRUARY 6, 2026',
+    dateTime: '2026-02-06',
+    imageSrc: '/images/4.png',
+  },
+  {
+    category: 'COMPANY UPDATES',
+    title: 'SMASH AI STREAMING: A New Era of Transparent Music Economy',
+    date: 'FEBRUARY 5, 2026',
+    dateTime: '2026-02-05',
+    imageSrc: '/images/5.png',
+  },
+  {
+    category: 'COMMUNITY',
+    title:
+      'Fan-to-Fan Referral Program Drives Viral Growth and Community Engagement',
+    date: 'FEBRUARY 5, 2026',
+    dateTime: '2026-02-05',
+    imageSrc: '/images/6.jpg',
   },
 ];
 
 export function News() {
   return (
-    <section id="news" className="py-24 bg-background border-t border-border">
-      <div className="container px-4 mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-          <div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Latest Updates
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl">
-              Stay informed on SMASH AI Streaming's journey to disrupt the $180B
-              audio economy.
-            </p>
-          </div>
-          <Button variant="outline" className="hidden md:flex">
-            View All News <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {newsItems.map((item, i) => (
-            <motion.div
-              key={i}
+    <section
+      id="news"
+      className="py-24 bg-gradient-to-br from-background via-orange-50/40 to-secondary/20 text-foreground"
+      aria-labelledby="news-heading">
+      <Container>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative">
+          {/* Left column: sticky header + category nav */}
+          <div className="lg:col-span-4 lg:self-start lg:sticky lg:top-28">
+            <motion.h2
+              id="news-heading"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}>
-              <Card className="h-full bg-card hover:bg-card/80 transition-colors border-border group cursor-pointer">
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
-                      {item.category}
-                    </div>
-                    <span className="text-xs font-mono text-muted-foreground flex items-center gap-2">
-                      <Calendar className="w-3 h-3" />
-                      {item.date}
-                    </span>
-                  </div>
-                  <CardTitle className="mb-2 group-hover:text-primary transition-colors">
-                    {item.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{item.description}</CardDescription>
-                  <div className="mt-6 flex items-center text-sm font-medium text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
-                    Read More <ArrowRight className="ml-2 w-4 h-4" />
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}>
+              News
+            </motion.h2>
+            <motion.p
+              className="mt-6 text-muted-foreground text-lg max-w-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.05 }}>
+              SMASH&apos;s latest updates, from blockchain and fan royalties to
+              artist opportunities and investor relations.
+            </motion.p>
+            <motion.a
+              href="#news"
+              className="inline-flex items-center gap-2 mt-8 text-primary font-semibold hover:text-primary/90 transition-colors group"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.15 }}>
+              VIEW ALL
+              <ArrowRight
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                aria-hidden
+              />
+            </motion.a>
+          </div>
 
-        <div className="mt-8 md:hidden">
-          <Button variant="outline" className="w-full">
-            View All News <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
+          {/* Right column: article grid */}
+          <div className="lg:col-span-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {ARTICLES.map((article, i) => (
+                <motion.article
+                  key={i}
+                  className="group bg-white/90 backdrop-blur rounded-lg overflow-hidden shadow-md border border-orange-100 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
+                  <a
+                    href="#"
+                    className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg">
+                    <div className="relative aspect-[16/10] bg-muted overflow-hidden">
+                      <Image
+                        src={article.imageSrc}
+                        alt={article.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <span className="text-xs font-bold uppercase tracking-wider text-foreground/70">
+                        {article.category}
+                      </span>
+                      <h3 className="mt-2 text-foreground font-bold text-base leading-snug line-clamp-3 group-hover:text-primary transition-colors">
+                        {article.title}
+                      </h3>
+                      <time
+                        dateTime={article.dateTime}
+                        className="mt-3 block text-sm text-muted-foreground">
+                        {article.date}
+                      </time>
+                    </div>
+                  </a>
+                </motion.article>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
