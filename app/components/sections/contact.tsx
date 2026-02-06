@@ -10,11 +10,11 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 bg-background relative overflow-hidden border-t border-white/5">
+      className="py-24 bg-background relative overflow-hidden border-t border-border">
       <div className="container px-4 mx-auto max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 bg-card/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 bg-card/30 backdrop-blur-xl border border-border rounded-3xl overflow-hidden">
           {/* Email Alerts Section */}
-          <div className="p-8 md:p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-white/10 relative group">
+          <div className="p-8 md:p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-border relative group">
             <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <motion.div
@@ -30,7 +30,7 @@ export function Contact() {
                 <div className="space-y-2">
                   <Input
                     placeholder="Email Address"
-                    className="bg-background/50 border-white/10 focus-visible:ring-primary h-12"
+                    className="bg-background/50 border-input focus-visible:ring-primary h-12"
                   />
                 </div>
 

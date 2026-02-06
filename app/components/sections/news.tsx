@@ -49,7 +49,7 @@ const newsItems = [
 
 export function News() {
   return (
-    <section id="news" className="py-24 bg-background border-t border-white/5">
+    <section id="news" className="py-24 bg-background border-t border-border">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div>
@@ -74,7 +74,7 @@ export function News() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}>
-              <Card className="h-full bg-card hover:bg-card/80 transition-colors border-white/10 group cursor-pointer">
+              <Card className="h-full bg-card hover:bg-card/80 transition-colors border-border group cursor-pointer">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-4">
                     <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">

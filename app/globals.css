@@ -1,46 +1,50 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #0A0A0F;
-  --foreground: #F5F5FA;
+  /* Light Mode Colors (Orange/White Theme) */
+  --background: #ffffff;
+  --foreground: #0f172a; /* Slate 900 */
 
-  --card: #1A1A24;
-  --card-foreground: #F5F5FA;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
 
-  --popover: #1A1A24;
-  --popover-foreground: #F5F5FA;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
 
-  --primary: #00D9FF;
-  --primary-foreground: #000000;
+  /* Primary: #F26734 (Orange) */
+  --primary: #f26734;
+  --primary-foreground: #ffffff;
 
-  --secondary: #6B46FF;
-  --secondary-foreground: #ffffff;
+  /* Secondary: #F5B914 (Yellow-Orange) */
+  --secondary: #f5b914;
+  --secondary-foreground: #0f172a;
 
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
+  --muted: #f1f5f9; /* Slate 100 */
+  --muted-foreground: #64748b; /* Slate 500 */
 
-  --accent: #00FF94;
-  --accent-foreground: #000000;
+  /* Accent can match Secondary or be a variation */
+  --accent: #f5b914;
+  --accent-foreground: #0f172a;
 
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
 
-  --border: #27272a;
-  --input: #27272a;
-  --ring: #00D9FF;
+  --border: #e2e8f0; /* Slate 200 */
+  --input: #e2e8f0;
+  --ring: #f26734;
 
   --radius: 0.5rem;
-  
-  /* Custom brand colors */
-  --brand-cyan: #00D9FF;
-  --brand-purple: #6B46FF;
-  --brand-green: #00FF94;
-  --brand-dark: #0A0A0F;
-  --brand-gray: #1A1A24;
+
+  /* Custom brand colors mapped to new theme */
+  --brand-cyan: #f26734; /* Replaced with Orange */
+  --brand-purple: #f5b914; /* Replaced with Yellow */
+  --brand-green: #f5b914; /* Replaced with Yellow */
+  --brand-dark: #ffffff;
+  --brand-gray: #f8fafc;
 }
 
 @theme inline {
@@ -66,7 +70,7 @@
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: calc(var(--radius));
   --radius-lg: calc(var(--radius) + 2px);
-  
+
   --color-brand-cyan: var(--brand-cyan);
   --color-brand-purple: var(--brand-purple);
   --color-brand-green: var(--brand-green);

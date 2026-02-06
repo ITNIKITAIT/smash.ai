@@ -3,7 +3,7 @@ import { Music, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-background border-t border-white/10 py-12">
+    <footer className="bg-background border-t border-border py-12">
       <div className="container px-4 mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-2">
@@ -76,7 +76,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border gap-4">
           <div className="text-sm text-muted-foreground">
             © 2026 SMASH AI STREAMING. All rights reserved.
           </div>

@@ -63,7 +63,7 @@ export function About() {
             className="relative">
             <div className="relative z-10 grid gap-6">
               {/* Feature Cards imitating Spotify's layout but with SMASH style */}
-              <div className="bg-card border border-white/10 p-8 rounded-2xl relative overflow-hidden group hover:border-primary/50 transition-colors">
+              <div className="bg-card border border-border p-8 rounded-2xl relative overflow-hidden group hover:border-primary/50 transition-colors">
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                   <Zap className="w-24 h-24" />
                 </div>
@@ -80,7 +80,7 @@ export function About() {
                 </div>
               </div>
 
-              <div className="bg-card border border-white/10 p-8 rounded-2xl relative overflow-hidden group hover:border-secondary/50 transition-colors ml-8">
+              <div className="bg-card border border-border p-8 rounded-2xl relative overflow-hidden group hover:border-secondary/50 transition-colors ml-8">
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                   <Zap className="w-24 h-24" />
                 </div>

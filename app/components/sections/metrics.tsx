@@ -28,9 +28,9 @@ export function Metrics() {
           {/* Glow effect behind the table */}
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent blur-xl -z-10" />
 
-          <div className="bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+          <div className="bg-card/40 backdrop-blur-xl border border-border rounded-3xl overflow-hidden shadow-2xl">
             {/* Table Header */}
-            <div className="grid grid-cols-12 gap-4 p-6 md:p-8 border-b border-white/5 bg-white/5 items-center">
+            <div className="grid grid-cols-12 gap-4 p-6 md:p-8 border-b border-border bg-muted/50 items-center">
               <div className="col-span-4 md:col-span-3 text-sm font-bold text-muted-foreground uppercase tracking-widest">
                 Platform
               </div>
@@ -46,7 +46,7 @@ export function Metrics() {
             </div>
 
             {/* Competitor Rows */}
-            <div className="divide-y divide-white/5">
+            <div className="divide-y divide-border">
               {[
                 {
                   name: 'Spotify',
@@ -75,7 +75,7 @@ export function Metrics() {
               ].map((platform) => (
                 <div
                   key={platform.name}
-                  className="grid grid-cols-12 gap-4 p-6 md:p-8 items-center hover:bg-white/5 transition-colors group">
+                  className="grid grid-cols-12 gap-4 p-6 md:p-8 items-center hover:bg-muted/50 transition-colors group">
                   <div className="col-span-4 md:col-span-3 font-medium text-lg text-muted-foreground group-hover:text-foreground transition-colors">
                     {platform.name}
                   </div>
@@ -97,7 +97,7 @@ export function Metrics() {
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
 
                 <div className="col-span-4 md:col-span-3 relative">
-                  <span className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                  <span className="text-2xl md:text-3xl font-bold text-primary tracking-tight">
                     SMASH
                   </span>
                   <span className="hidden md:inline ml-2 text-xs font-bold bg-accent text-black px-2 py-0.5 rounded-full uppercase align-middle">
@@ -138,9 +138,9 @@ export function Metrics() {
               value: '$180B',
               sub: 'Total Streaming Economy',
               desc: 'The massive opportunity we are disrupting.',
-              color: 'text-white',
-              bg: 'bg-white/5',
-              border: 'border-white/10',
+              color: 'text-foreground',
+              bg: 'bg-muted/50',
+              border: 'border-border',
             },
             {
               label: 'Fan Share',
