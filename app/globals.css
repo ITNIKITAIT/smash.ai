@@ -86,3 +86,13 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+/* Logo glow (about page) */
+.logo-glow {
+  background: radial-gradient(
+    circle at center,
+    var(--primary) 0%,
+    var(--secondary) 40%,
+    transparent 70%
+  );
+}

@@ -7,22 +7,22 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="pt-20 bg-background relative overflow-hidden">
-      <Container className="max-w-[1500px]">
-        <div className="grid grid-cols-12 items-end">
-          <div className="col-span-2" />
-          <div className="col-span-6 p-30 border-2 border-b-0 rounded-t-lg border-primary h-fit">
+      className="md:pt-20 pt-5 bg-background relative overflow-hidden">
+      <Container className="max-w-[1500px] px-0">
+        <div className="grid md:grid-cols-12 grid-cols-1 items-end">
+          <div className="hidden md:block col-span-2" />
+          <div className="md:col-span-6 col-span-1 md:p-30 p-8 border-t-2 md:border-x-2 border-b-0 md:rounded-t-lg border-primary h-fit">
             <h2 className="text-3xl font-bold text-foreground mb-8">
               Email Alerts
             </h2>
-            <form className="space-y-6">
+            <form className="md:space-y-6 space-y-4">
               <Input
                 type="email"
                 name="email"
                 placeholder="Email Address"
                 className="max-w-md rounded-lg border-2 h-12 text-base"
               />
-              <div className="flex flex-wrap gap-6 text-sm">
+              <div className="flex flex-wrap md:gap-6 gap-2 md:text-sm text-xs">
                 {['News', 'Token Updates', 'Events'].map((label) => (
                   <label
                     key={label}
@@ -40,11 +40,11 @@ export function Contact() {
               </Button>
             </form>
           </div>
-          <div className="col-span-4 p-20 border-2 border-b-0 border-l-0 rounded-tr-lg border-primary h-fit">
+          <div className="md:col-span-4 col-span-1 md:p-20 p-8 border-t-2 md:border-r-2 border-b-0 md:rounded-tr-lg border-primary h-fit">
             <h2 className="text-3xl font-bold text-foreground mb-6">
               Investor Contact
             </h2>
-            <p className="text-muted-foreground text-base leading-relaxed mb-8">
+            <p className="text-muted-foreground md:text-base text-sm leading-relaxed mb-8">
               Questions for the Investor Relations department can be emailed to{' '}
               <a
                 href="mailto:hello@sms.ai"

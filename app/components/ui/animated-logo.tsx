@@ -1,6 +1,12 @@
 'use client';
 
-import { motion, useAnimation, Variants } from 'framer-motion';
+import {
+  motion,
+  useAnimation,
+  MotionValue,
+  useTransform,
+  useMotionValue,
+} from 'framer-motion';
 import { useEffect } from 'react';
 
 type PathData = {
@@ -48,22 +54,103 @@ const paths: PathData[] = [
   },
 ];
 
-export function AnimatedLogo({ className }: { className?: string }) {
+interface AnimatedPathProps {
+  path: PathData;
+  index: number;
+  /** 0 = assembled, 1 = max spread. For scroll mode: derived so start/end=0, center=1 */
+  spreadProgress: MotionValue<number>;
+  scrollProgress?: MotionValue<number>;
+  controls: ReturnType<typeof useAnimation>;
+}
+
+const SPREAD_MULTIPLIER = 0.4;
+
+function AnimatedPath({
+  path,
+  index,
+  spreadProgress,
+  scrollProgress,
+  controls,
+}: AnimatedPathProps) {
+  const x = useTransform(
+    spreadProgress,
+    [0, 1],
+    [0, path.initial.x * SPREAD_MULTIPLIER],
+  );
+  const y = useTransform(
+    spreadProgress,
+    [0, 1],
+    [0, path.initial.y * SPREAD_MULTIPLIER],
+  );
+
+  // If scrollProgress is active, we drive animation with spread
+  if (scrollProgress) {
+    return (
+      <g>
+        {/* Glow layer */}
+        <motion.path
+          d={path.d}
+          fill="url(#logo-gradient)"
+          style={{ x, y }}
+          filter="url(#glow)"
+          opacity={0.6}
+        />
+        {/* Main layer */}
+        <motion.path d={path.d} fill="url(#logo-gradient)" style={{ x, y }} />
+      </g>
+    );
+  }
+
+  // Otherwise use the controls
+  return (
+    <g>
+      {/* Glow layer */}
+      <motion.path
+        custom={index}
+        d={path.d}
+        fill="url(#logo-gradient)"
+        animate={controls}
+        filter="url(#glow)"
+        opacity={0.6}
+      />
+      {/* Main layer */}
+      <motion.path
+        custom={index}
+        d={path.d}
+        fill="url(#logo-gradient)"
+        animate={controls}
+      />
+    </g>
+  );
+}
+
+interface AnimatedLogoProps {
+  className?: string;
+  scrollProgress?: MotionValue<number>;
+}
+
+export function AnimatedLogo({ className, scrollProgress }: AnimatedLogoProps) {
   const controls = useAnimation();
+  const defaultProgress = useMotionValue(0);
+  const rawProgress = scrollProgress || defaultProgress;
+
+  // Scroll mode: start and end = assembled (0), center = max spread (1). Slower, symmetric.
+  const spreadProgress = useTransform(rawProgress, [0, 0.5, 1], [0, 1, 0]);
+
+  // Rotation: 0° at start, 180° at center, 360° at end (same as start)
+  const globalRotate = useTransform(rawProgress, [0, 0.5, 1], [0, 180, 360]);
 
   useEffect(() => {
+    if (scrollProgress) return;
+
     let isMounted = true;
 
     const sequence = async () => {
       while (isMounted) {
-        // 1. Reset to initial state (hidden/exploded) instantly
         await controls.set((i) => paths[i].initial);
-
-        // Short pause before assembling
         await new Promise((resolve) => setTimeout(resolve, 500));
         if (!isMounted) break;
 
-        // 2. Assemble
         await controls.start({
           x: 0,
           y: 0,
@@ -80,8 +167,8 @@ export function AnimatedLogo({ className }: { className?: string }) {
         if (!isMounted) break;
 
         await controls.start((i) => ({
-          x: paths[i].initial.x * 1.5,
-          y: paths[i].initial.y * 1.5,
+          x: paths[i].initial.x * SPREAD_MULTIPLIER,
+          y: paths[i].initial.y * SPREAD_MULTIPLIER,
           opacity: 0,
           scale: 0.5,
           rotate: paths[i].initial.rotate * 2,
@@ -97,41 +184,46 @@ export function AnimatedLogo({ className }: { className?: string }) {
     };
 
     sequence();
-
     return () => {
       isMounted = false;
     };
-  }, [controls]);
+  }, [controls, scrollProgress]);
 
   return (
-    <div className={className}>
+    <motion.div
+      className={className}
+      style={scrollProgress ? { rotate: globalRotate } : undefined}>
       <svg
         viewBox="0 0 229 228"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full overflow-visible">
         <defs>
-          <linearGradient
-            id="logo-gradient"
-            x1="0"
-            y1="0"
-            x2="1"
-            y2="1"
-            gradientUnits="userSpaceOnUse">
+          <linearGradient id="logo-gradient" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="var(--secondary)" />
             <stop offset="100%" stopColor="var(--primary)" />
           </linearGradient>
+
+          {/* Glow filter */}
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="8" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
         </defs>
         {paths.map((path, i) => (
-          <motion.path
+          <AnimatedPath
             key={i}
-            custom={i}
-            d={path.d}
-            fill="url(#logo-gradient)"
-            animate={controls}
+            path={path}
+            index={i}
+            spreadProgress={scrollProgress ? spreadProgress : defaultProgress}
+            scrollProgress={scrollProgress}
+            controls={controls}
           />
         ))}
       </svg>
-    </div>
+    </motion.div>
   );
 }
