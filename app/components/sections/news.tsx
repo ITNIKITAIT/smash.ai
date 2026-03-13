@@ -8,14 +8,15 @@ import { Container } from '../ui/container';
 const ARTICLES = [
   {
     category: 'FOR THE RECORD',
-    title: 'SMASH Unveils Groundbreaking Blockchain-Powered Fan Royalties',
+    title: 'Smashify Unveils Groundbreaking Blockchain-Powered Fan Royalties',
     date: 'FEBRUARY 6, 2026',
     dateTime: '2026-02-06',
     imageSrc: '/images/1.png',
   },
   {
     category: 'ARTIST SPOTLIGHT',
-    title: 'Artists See 3000% Payout Increase with SMASH AI Streaming Platform',
+    title:
+      'Artists See 3000% Payout Increase with Smashify AI Streaming Platform',
     date: 'FEBRUARY 6, 2026',
     dateTime: '2026-02-06',
     imageSrc: '/images/2.png',
@@ -31,14 +32,14 @@ const ARTICLES = [
   {
     category: 'TOKENOMICS',
     title:
-      'The Economics of Empowerment: How SMASH Pays Listeners and Creators',
+      'The Economics of Empowerment: How Smashify Pays Listeners and Creators',
     date: 'FEBRUARY 6, 2026',
     dateTime: '2026-02-06',
     imageSrc: '/images/4.png',
   },
   {
     category: 'COMPANY UPDATES',
-    title: 'SMASH AI STREAMING: A New Era of Transparent Music Economy',
+    title: 'Smashify AI Streaming: A New Era of Transparent Music Economy',
     date: 'FEBRUARY 5, 2026',
     dateTime: '2026-02-05',
     imageSrc: '/images/5.png',
@@ -78,8 +79,8 @@ export function News() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.05 }}>
-              SMASH&apos;s latest updates, from blockchain and fan royalties to
-              artist opportunities and investor relations.
+              Smashify&apos;s latest updates, from blockchain and fan royalties
+              to artist opportunities and investor relations.
             </motion.p>
             <motion.a
               href="#news"

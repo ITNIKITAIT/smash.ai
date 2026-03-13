@@ -70,7 +70,7 @@ export function Hero() {
               className="bg-primary hover:bg-primary/90 text-white"
               asChild>
               <a href="mailto:hello@sms.ai" className="group">
-                Invest in SMASH
+                Invest in Smashify
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>

@@ -17,7 +17,7 @@ const sections = [
           You get paid to listen, paid to create, and paid to share.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          SMASH AI STREAMING is designed to pay users and creators in a way
+          Smashify AI Streaming is designed to pay users and creators in a way
           mainstream streaming platforms do not. We pay listeners 3% of gross
           programmatic advertising revenue, and an additional 2% of gross
           revenue for direct referrals.

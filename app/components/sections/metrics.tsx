@@ -91,14 +91,14 @@ export function Metrics() {
                 </div>
               ))}
 
-              {/* SMASH Row - Highlighted & Bigger */}
+              {/* Smashify Row - Highlighted & Bigger */}
               <div className="grid grid-cols-12 gap-4 p-8 md:p-10 items-center bg-primary/10 relative overflow-hidden">
                 <div className="absolute inset-0 bg-primary/5 animate-pulse" />
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
 
                 <div className="col-span-4 md:col-span-3 relative">
                   <span className="text-2xl md:text-3xl font-bold text-primary tracking-tight">
-                    SMASH
+                    Smashify
                   </span>
                   <span className="hidden md:inline ml-2 text-xs font-bold bg-accent text-black px-2 py-0.5 rounded-full uppercase align-middle">
                     You

@@ -1,7 +1,7 @@
 import EconomicsView from '@/app/components/sections/economics-view';
 
 export const metadata = {
-  title: 'Economics | SMASH AI',
+  title: 'Economics | Smashify AI',
   description:
     'The future of streaming economics. Get paid to listen, create, and share.',
 };

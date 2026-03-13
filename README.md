@@ -1,12 +1,12 @@
-# SMASH AI STREAMING — Investor Relations
+# Smashify AI Streaming — Investor Relations
 
-Public website and investor relations platform for **SMASH AI STREAMING**, a blockchain-powered music streaming app that pays listeners, creators, and referrers.
+Public website and investor relations platform for **Smashify AI Streaming**, a blockchain-powered music streaming app that pays listeners, creators, and referrers.
 
 **Tagline:** _You get paid to listen, paid to create, and paid to share._
 
 ## What it is
 
-- **Product:** Investor-facing site for the SMASH AI STREAMING app (Panama). Communicates the platform’s value, economics, token sale, and contact for investors.
+- **Product:** Investor-facing site for the Smashify AI Streaming app (Panama). Communicates the platform’s value, economics, token sale, and contact for investors.
 - **Audience:** Investors, artists, media, potential token buyers.
 - **Content:** Hero, platform economics, fan royalties, growth metrics, token sale ($5M round, Feb 15 close), roadmap, and contact (hello@sms.ai).
 
@@ -46,4 +46,4 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## License
 
-Private — SMASH AI MUSIC STREAMING.
+Private — Smashify AI Music Streaming.

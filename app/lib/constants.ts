@@ -18,7 +18,7 @@ export const STREAMING_COMPARISON = [
     color: '#FC3C44',
   },
   {
-    platform: 'SMASH',
+    platform: 'Smashify',
     artistPayout: 0.1,
     fanRoyalty: 0.05,
     color: '#00D9FF',
@@ -64,7 +64,7 @@ export const GROWTH_PROJECTIONS = [
 ];
 
 export const TOKEN_DETAILS = {
-  name: 'SMASH COIN',
+  name: 'Smashify Coin',
   raise: '5M',
   deadline: 'Feb 15, 2026',
   minInvestment: '100K',

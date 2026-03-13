@@ -21,7 +21,7 @@ const FEATURES = [
     description:
       'Earn $0.05 per stream. The first platform to pay you for engagement.',
     details:
-      'Unlike any other platform, SMASH pays listeners. 3% of all gross programmatic advertising revenue is distributed back to fans who engage with music. This creates a circular economy where your time and attention are valued assets, not just products to be sold.',
+      'Unlike any other platform, Smashify pays listeners. 3% of all gross programmatic advertising revenue is distributed back to fans who engage with music. This creates a circular economy where your time and attention are valued assets, not just products to be sold.',
     stat: '3%',
     statLabel: 'Revenue Share',
     color: 'bg-orange-200/30',
@@ -49,11 +49,11 @@ const FEATURES = [
   },
   {
     id: 'token-utility',
-    title: 'SMASH Token',
+    title: 'Smashify Token',
     subtitle: 'Unified Economy',
-    description: 'Governance, Staking, and Spending power.',
+    description: 'Governance, staking, and spending power.',
     details:
-      'SMASH COIN is the lifeblood of the ecosystem. Use it to buy merch, concert tickets, and ad space, or stake it to earn higher royalty tiers and vote on platform governance. A true utility token with real-world value.',
+      'Smashify Coin is the lifeblood of the ecosystem. Use it to buy merch, concert tickets, and ad space, or stake it to earn higher royalty tiers and vote on platform governance. A true utility token with real-world value.',
     color: 'bg-rose-100/50',
     imageUrl: '/images/coin.png',
   },
@@ -117,7 +117,7 @@ export function EconomicsAccordion() {
                       <div className="flex justify-between items-start mb-4">
                         <img
                           src="/icons/logo.svg"
-                          alt="SMASH"
+                          alt="Smashify"
                           className="size-10"
                         />
                         <div className="transition-transform duration-500 bg-gray-50 size-10 rounded-lg border border-gray-200">
@@ -171,7 +171,7 @@ export function EconomicsAccordion() {
                           {activeFeature.imageUrl ? (
                             <img
                               src={activeFeature.imageUrl || '/images/1.png'}
-                              alt="SMASH"
+                              alt="Smashify"
                               className="size-full object-cover"
                             />
                           ) : (

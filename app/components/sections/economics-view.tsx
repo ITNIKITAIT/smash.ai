@@ -26,9 +26,9 @@ export default function EconomicsView() {
               Streaming Economics
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              SMASH AI pays you to listen, create, and share. We're rebuilding
-              the $180B streaming economy to benefit everyone, not just the
-              platforms.
+              Smashify AI pays you to listen, create, and share. We're
+              rebuilding the $180B streaming economy to benefit everyone, not
+              just the platforms.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
@@ -36,7 +36,7 @@ export default function EconomicsView() {
                 className="bg-primary hover:bg-primary/90 text-white"
                 asChild>
                 <a href="mailto:hello@sms.ai" className="group">
-                  Invest in SMASH
+                  Invest in Smashify
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
@@ -63,7 +63,7 @@ export default function EconomicsView() {
                 Token Sale
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                Join the ownership economy. SMASH COIN powers the entire
+                Join the ownership economy. Smashify Coin powers the entire
                 ecosystem, from ad payments to merchandise and governance.
               </p>
 

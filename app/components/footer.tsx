@@ -47,6 +47,15 @@ export function Footer() {
                   Token Sale
                 </Link>
               </li>
+              <li>
+                <a
+                  href="https://drive.google.com/file/d/1wVg_3BY5TyGiqpT8gOUSwlJ5V4OkTvtM/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors">
+                  Whitepaper
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -73,7 +82,7 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border gap-4">
           <div className="text-sm text-muted-foreground">
-            © 2026 SMASH AI STREAMING. All rights reserved.
+            © 2026 Smashify AI Streaming. All rights reserved.
           </div>
           <div className="flex gap-4">
             <Link

@@ -62,7 +62,7 @@ export default function TokenSaleView() {
             <motion.h1
               variants={itemVariants}
               className="text-5xl md:text-7xl font-bold tracking-tight">
-              SMASH <span className="text-primary">TOKEN SALE</span>
+              Smashify <span className="text-primary">Token Sale</span>
             </motion.h1>
             <motion.p
               variants={itemVariants}
@@ -76,7 +76,7 @@ export default function TokenSaleView() {
                 className="bg-primary hover:bg-primary/90 text-white"
                 asChild>
                 <a href="mailto:hello@sms.ai" className="group">
-                  Invest in SMASH
+                  Invest in Smashify
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>

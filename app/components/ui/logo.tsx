@@ -11,12 +11,12 @@ export function Logo({ className }: { className?: string }) {
       )}>
       <img
         src="/icons/logo.svg"
-        alt="SMASH.AI"
+        alt="Smashify.AI"
         width={32}
         height={32}
         className="mr-2"
       />
-      SMASH<span className="text-primary px-1">.</span>AI
+      Smashify<span className="text-primary px-1">.</span>AI
     </Link>
   );
 }

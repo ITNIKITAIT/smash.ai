@@ -22,7 +22,7 @@ const timeline = [
     focus: 'Initial Release',
     icon: Target,
     description:
-      'Official launch of SMASH platform with core streaming features and initial artist partnerships.',
+      'Official launch of Smashify platform with core streaming features and initial artist partnerships.',
   },
   {
     period: 'Q3 2026',

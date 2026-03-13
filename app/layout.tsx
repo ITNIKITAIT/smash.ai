@@ -19,7 +19,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'SMASH AI STREAMING - Investor Relations',
+  title: 'Smashify AI Streaming - Investor Relations',
   description:
     'The first streaming platform that pays you to listen. Blockchain-powered fan royalties.',
 };
