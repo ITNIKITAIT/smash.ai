@@ -1,36 +1,36 @@
-'use client';
+"use client";
 
-import { useRef } from 'react';
+import { useRef } from "react";
 import {
   motion,
   useScroll,
   MotionValue,
   useMotionValueEvent,
-} from 'framer-motion';
-import { Container } from '../ui/container';
-import { cn } from '@/app/lib/utils';
+} from "framer-motion";
+import { Container } from "../ui/container";
+import { cn } from "@/app/lib/utils";
 
 const items = [
   {
-    title: 'The Mission',
+    title: "The Mission",
     description:
       "You get paid to listen, paid to create, and paid to share. We're building the first wealth-sharing audio network that rewards every participant in the ecosystem.",
-    imageSrc: '/images/about-1.png',
-    color: 'bg-gray-400/10',
+    imageSrc: "/images/about-1.png",
+    color: "bg-gray-400/10",
   },
   {
-    title: 'Blockchain Powered',
+    title: "Blockchain Powered",
     description:
-      'For the first time, fans earn royalties tied to engagement. Our smart contracts ensure transparent, instant payouts and verifiable ownership for artists and fans alike.',
-    videoSrc: '/videos/sun.mp4',
-    color: 'bg-orange-500/5',
+      "For the first time, fans earn royalties tied to engagement. Our smart contracts ensure transparent, instant payouts and verifiable ownership for artists and fans alike.",
+    videoSrc: "/videos/sun.mp4",
+    color: "bg-orange-500/5",
   },
   {
-    title: 'Fair Economics',
+    title: "Fair Economics",
     description:
-      'Artists earn $0.10/stream (vs $0.003 industry avg). Fans earn 3% of ad revenue. Referrers earn 2%. A truly fair ecosystem built for the people.',
-    imageSrc: '/images/about-2.png',
-    color: 'bg-red-500/5',
+      "Artists can earn 10% more per stream than the industry average. Fans earn 3% of ad revenue. Referrers earn 2%. A truly fair ecosystem built for the people.",
+    imageSrc: "/images/about-2.png",
+    color: "bg-red-500/5",
   },
 ];
 
@@ -38,7 +38,7 @@ export function About() {
   const container = useRef(null);
   const { scrollY } = useScroll({
     target: container,
-    offset: ['start start', 'end end'],
+    offset: ["start start", "end end"],
   });
 
   return (
@@ -73,14 +73,14 @@ const Card = ({ item, i, total, scrollY }: CardProps) => {
   const HEIGHT = 500;
   const defaultMarginTop = i === 0 ? 0 : -(HEIGHT - 30);
 
-  useMotionValueEvent(scrollY, 'change', (latest: number) => {
+  useMotionValueEvent(scrollY, "change", (latest: number) => {
     const calculatedMarginTop = latest - (i + 1) * HEIGHT;
     const marginTop = Math.max(
       defaultMarginTop,
       Math.min(i === 0 ? 0 : 40, calculatedMarginTop),
     );
     if (cardRef.current) {
-      cardRef.current.style.marginTop = marginTop.toString() + 'px';
+      cardRef.current.style.marginTop = marginTop.toString() + "px";
     }
   });
 
@@ -91,14 +91,14 @@ const Card = ({ item, i, total, scrollY }: CardProps) => {
       className="w-full relative">
       <div
         className={cn(
-          'w-full h-full rounded-3xl bg-card overflow-hidden border border-white/10 shadow-2xl flex flex-col md:flex-row',
+          "w-full h-full rounded-3xl bg-card overflow-hidden border border-white/10 shadow-2xl flex flex-col md:flex-row",
         )}>
         {/* Content */}
         <div className="flex flex-col md:grid md:grid-cols-2 w-full h-full">
           <div
             className={cn(
-              'w-full w-full p-8 md:p-12 flex flex-col relative z-10 order-5 md:order-0 flex-1',
-              i % 2 === 0 && 'md:order-2',
+              "w-full w-full p-8 md:p-12 flex flex-col relative z-10 order-5 md:order-0 flex-1",
+              i % 2 === 0 && "md:order-2",
               item.color,
             )}>
             <div className="inline-flex items-center justify-center md:w-10 md:h-10 w-5 h-5 rounded-full bg-white/5 border border-white/10 mb-6 text-sm font-mono text-muted-foreground">

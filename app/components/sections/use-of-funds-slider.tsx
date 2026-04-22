@@ -1,51 +1,51 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@/app/lib/utils';
-import { Container } from '@/app/components/ui/container';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/app/lib/utils";
+import { Container } from "@/app/components/ui/container";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const funds = [
   {
-    label: 'PR, Marketing & Branding',
-    amount: '$1.8M',
+    label: "PR, Marketing & Branding",
+    amount: "$1.8M",
     percent: 36,
-    color: 'bg-primary',
-    desc: 'Aggressive global rollout, influencer partnerships, and brand establishment to capture market share rapidly.',
-    videoUrl: '/videos/growth.mp4',
+    color: "bg-primary",
+    desc: "Aggressive global rollout, influencer partnerships, and brand establishment to capture market share rapidly.",
+    videoUrl: "/videos/growth.mp4",
   },
   {
-    label: 'Operations & Engineering',
-    amount: '$1.4M',
+    label: "Operations & Engineering",
+    amount: "$1.4M",
     percent: 28,
-    color: 'bg-secondary',
-    desc: 'Core platform development, blockchain integration, and scaling infrastructure to support millions of concurrent users.',
-    imageUrl: '/images/proccesing.jpg',
+    color: "bg-secondary",
+    desc: "Core platform development, blockchain integration, and scaling infrastructure to support millions of concurrent users.",
+    imageUrl: "/images/proccesing.jpg",
   },
   {
-    label: 'Legal & Licensing',
-    amount: '$0.9M',
+    label: "Legal & Licensing",
+    amount: "$0.9M",
     percent: 18,
-    color: 'bg-slate-400',
-    desc: 'Securing global music rights, regulatory compliance, and international expansion licenses.',
-    videoUrl: '/videos/legal.mp4',
+    color: "bg-slate-400",
+    desc: "Securing global music rights, regulatory compliance, and international expansion licenses.",
+    videoUrl: "/videos/legal.mp4",
   },
   {
-    label: 'Partnerships',
-    amount: '$0.6M',
+    label: "Partnerships",
+    amount: "$0.6M",
     percent: 12,
-    color: 'bg-slate-500',
-    desc: 'Strategic alliances with major labels, artists, and distribution channels to ensure content depth.',
-    imageUrl: '/images/1.png',
+    color: "bg-slate-500",
+    desc: "Strategic alliances with major labels, artists, and distribution channels to ensure content depth.",
+    imageUrl: "/images/1.png",
   },
   {
-    label: 'Security',
-    amount: '$0.3M',
+    label: "Security",
+    amount: "$0.3M",
     percent: 6,
-    color: 'bg-slate-600',
-    desc: 'Smart contract audits, data protection, and enterprise-grade security measures for user assets.',
-    videoUrl: '/videos/security.mp4',
+    color: "bg-slate-600",
+    desc: "Smart contract audits, data protection, and enterprise-grade security measures for user assets.",
+    videoUrl: "/videos/security.mp4",
   },
 ];
 
@@ -87,14 +87,14 @@ export function UseOfFundsSlider() {
                 className="absolute z-30 inset-0 flex items-center justify-center pointer-events-none">
                 <div className="relative w-32 h-32 md:w-48 md:h-48 bg-background/90 rounded-full flex items-center justify-center shadow-2xl border border-primary/20 backdrop-blur-md">
                   <motion.img
-                    src="/icons/logo.svg"
+                    src="/images/logo.png"
                     alt="Loading"
                     className="w-16 h-16 md:w-24 md:h-24"
                     animate={{ rotate: 360 }}
                     transition={{
                       repeat: Infinity,
                       duration: 1,
-                      ease: 'linear',
+                      ease: "linear",
                     }}
                   />
                 </div>
@@ -141,7 +141,7 @@ export function UseOfFundsSlider() {
                         initial={{ width: 0 }}
                         animate={{ width: `${currentFund.percent}%` }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className={cn('h-full rounded-full', currentFund.color)}
+                        className={cn("h-full rounded-full", currentFund.color)}
                       />
                     </div>
                   </div>
